@@ -40,7 +40,7 @@ module.exports.run = async function({ api, event }) {
         attachment: fs.createReadStream(__dirname + "/cache/1.png")
     }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.png"));
   
-    return request(encodeURI(`content://com.kiwibrowser.browser.FileProvider/images/screenshot/1754044782236-365682611.jpg`))
+    return request(encodeURI(``))
         .pipe(fs.createWriteStream(__dirname + '/cache/1.png'))
         .on('close', () => callback());
 };
